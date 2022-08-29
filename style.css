@@ -1,13 +1,58 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif, Arial, Helvetica, "Roboto";
   margin: 0;
   padding: 0;
 }
 
 body, html {
-  background: linear-gradient(37deg, rgba(39,42,55,1) 0%, rgba(39,42,55,1) 35%, rgba(39,42,55,0.6739028375021884) 100%), url(./Images/forest.jpg);
+  background: linear-gradient(72deg, rgb(39, 41, 54) 0%, rgba(39, 41, 54, 0.9643207625) 69%, rgba(39, 41, 54, 0.611379586) 100%), url(./Images/forest.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   background-position: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 3rem;
+}
+header nav {
+  display: flex;
+  list-style: none;
+}
+header nav li {
+  margin-right: 5rem;
+  margin-left: 1rem;
+  word-spacing: 0.5rem;
+}
+header nav li span img {
+  width: 4rem;
+  height: auto;
+}
+
+.sign-up-section {
+  color: white;
+  margin: 10rem 0 0 2rem;
+  height: 100px;
+  width: 35rem;
+  display: inline-block;
+  border: 1px solid blue;
+}
+.sign-up-section .sign-up-form {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+.sign-up-section .sign-up-form input {
+  padding: 0.8rem 0rem;
+}
+.sign-up-section .sign-up-form .first-name, .sign-up-section .sign-up-form .last-name {
+  flex-basis: 50%;
+}
+.sign-up-section .sign-up-form .email, .sign-up-section .sign-up-form .password, .sign-up-section .sign-up-form .submit {
+  flex-basis: 100%;
 }/*# sourceMappingURL=style.css.map */
