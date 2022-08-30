@@ -1,61 +1,106 @@
-*{
-    box-sizing: border-box;
-    font-family: sans-serif, Arial, Helvetica, "Roboto";
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif, Arial, Helvetica;
+  margin: 0;
+  padding: 0;
 }
 
-body, html{
-    background: linear-gradient(72deg, rgba(39,41,54,1) 0%, rgba(39,41,54,0.9643207624846813) 69%, rgba(39,41,54,0.6113795860140931) 100%), url(./Images/forest.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    background-position: center;
+body,
+html {
+  background: linear-gradient(
+      72deg,
+      rgba(39, 41, 54, 1) 0%,
+      rgba(39, 41, 54, 0.9643207624846813) 69%,
+      rgba(39, 41, 54, 0.6113795860140931) 100%
+    ),
+    url(./Images/forest.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position: center;
 }
 
-
-header{
+header {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 3rem;
+  nav {
     display: flex;
-    align-items: center;
-    color: white;
-    height: 3rem;
-    nav{
-        display: flex;
-        list-style: none;
-        li{
-            margin-right: 5rem;
-            margin-left: 1rem;
-            word-spacing: .5rem;
-            span img{
-                width: 4rem;
-                height: auto;
-            }
-            // display: inline-block; THIS MADE "li" ELEMENTS SIT HORIZONTALLY
-        }
+    list-style: none;
+    li {
+      margin-right: 5rem;
+      margin-left: 1rem;
+      h3{
+        font-weight: 400;
+      }
+      span img {
+        width: 4rem;
+        height: auto;
+      }
+      // display: inline-block; THIS MADE "li" ELEMENTS SIT HORIZONTALLY
     }
+  }
 }
 
-.sign-up-section{
-    color: white;
-    margin: 10rem 0 0 2rem;
-    height: 100px;
-    width: 35rem;
-    display: inline-block;
-    border: 1px solid blue;
-    
-    .sign-up-form{
-        border: 1px solid red;
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 100%;
-        input{
-            padding: .8rem .0rem;
-        }
-        .first-name, .last-name{
-            flex-basis: 50%;
-        }
-        .email, .password, .submit{
-            flex-basis: 100%;
-        }
+.sign-up-section {
+  color: white;
+  margin: 10rem 2rem 0 0rem;
+  height: 60%;
+  width: 100%;
+  display: inline-block;
+  border: 1px solid green;
+  h2{
+    font-size: 3rem;
+  }
+  h3{
+    font-weight: 100;
+    margin-top: 2rem;
+    span{
+      color: #2085DF;
     }
-}
+  }
+
+  .container{
+    display: flex;
+    .sign-up-form {
+      border: 1px solid red;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      height: 100%;
+      max-height: 75%;
+      align-content: space-between;
+      justify-content: space-between;
+  
+      input {
+        height: 20%;
+        border-radius: 1.2rem;
+        background-color: #3C404A;
+        color: white;
+        font-weight: 700;
+        padding-left: 1rem;
+        border: none;
+        outline: none;
+      }
+      .first-name,
+      .last-name {
+        flex-basis: 48%;
+      }
+      .email,
+      .password,
+      .submit {
+        flex-basis: 100%;
+      }
+      .submit{
+        background-color: #1D90F5;
+      }
+    }
+  }
+  
+  .nwrm-logo{
+    height: auto;
+    width: 6rem;
+  }
+  }
+ 
