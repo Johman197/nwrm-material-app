@@ -28,6 +28,7 @@ body{
 header {
   border: 1px solid green;
   width: 100%;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,9 +42,7 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
-    border: 2px solid blue;
-    width: 10rem;
-    margin-right: 1rem;
+    // border: 2px solid blue;
     list-style: none;
     li {
       h3{
@@ -57,6 +56,69 @@ header {
     }
   }
 }
+
+  ///////////////////////////HAMBURGER MENU/////
+  .menu-wrap{
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: 1px solid blue;
+    .toggler{
+      position: absolute;
+      cursor: pointer;
+      width: 2.8rem;
+      height: 2.8rem;
+      opacity: 0;
+      z-index: 2;
+    }
+    .hamburger{
+      // position: absolute;
+      border: 1px solid purple;
+      width: 3rem;
+      height: 3rem;
+      padding: .3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(43, 45, 58, 0.265);
+      ///Hamburger line///
+      div{
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s ease;
+      }
+      ///Top & Bottom lines///
+      div:before, div:after{
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+      }
+      ///Moves line down///
+      div:after{
+        top: 10px;
+      }
+    }
+
+    ///Toggler Animate///
+    .toggler:checked + .hamburger > div{
+      transform: rotate(135deg);
+    }
+
+    ///Turn lines into X///
+    
+  }
+  
+
+///////////////////////////SIGN-UP/////////////////
 .sign-up-section{
   width: 100%;
   color: white;
@@ -88,6 +150,9 @@ header {
         padding-left: 1rem;
         border: none;
         outline-color: #1D90F5;
+      }
+      input:autofill {
+        outline: none;
       }
 
       input[type="submit"]{

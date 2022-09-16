@@ -1,0 +1,24 @@
+.menu-wrap{
+    top: 0;
+    left: 0;
+    border: 1px solid blue;
+    .toggler{
+      position: absolute;
+      cursor: pointer;
+      width: 2.8rem;
+      height: 2.8rem;
+      // opacity: 0;
+    }
+  
+    .hamburger{
+      // position: absolute;
+      border: 1px solid purple;
+      width: 3rem;
+      height: 3rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
