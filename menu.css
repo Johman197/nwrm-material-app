@@ -1,7 +1,6 @@
 .menu-wrap {
   top: 0;
   left: 0;
-  border: 1px solid blue;
 }
 .menu-wrap .toggler {
   position: absolute;
@@ -10,7 +9,6 @@
   height: 2.8rem;
 }
 .menu-wrap .hamburger {
-  border: 1px solid purple;
   width: 3rem;
   height: 3rem;
   padding: 1rem;

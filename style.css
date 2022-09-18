@@ -13,7 +13,6 @@ body {
   margin: 0;
   height: 100%;
   min-width: 100%;
-  border: 3px solid blue;
   background: linear-gradient(72deg, rgb(39, 41, 54) 0%, rgba(39, 41, 54, 0.9643207625) 69%, rgba(39, 41, 54, 0.611379586) 100%), url(./Images/forest.jpg);
   overflow: hidden;
   background-repeat: no-repeat;
@@ -22,7 +21,6 @@ body {
 }
 
 header {
-  border: 1px solid green;
   width: 100%;
   padding: 0 1rem;
   display: flex;
@@ -53,7 +51,9 @@ header nav li span img {
   top: 0;
   left: 0;
   z-index: 1;
-  border: 1px solid blue;
+  /*Turn lines into X*/
+  /*Rotate on hover when checked*/
+  /*Menu drop when checked*/
 }
 .menu-wrap .toggler {
   position: absolute;
@@ -64,14 +64,16 @@ header nav li span img {
   z-index: 2;
 }
 .menu-wrap .hamburger {
-  border: 1px solid purple;
+  position: absolute;
   width: 3rem;
   height: 3rem;
   padding: 0.3rem;
+  margin-left: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(43, 45, 58, 0.265);
+  z-index: 1;
 }
 .menu-wrap .hamburger div {
   position: relative;
@@ -97,6 +99,29 @@ header nav li span img {
 }
 .menu-wrap .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
+}
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+.menu-wrap .menu ul {
+  transition: all 0.4s ease;
+  list-style: none;
+  background-color: rgba(43, 45, 58, 0.265);
+  padding: 0.8rem;
+  opacity: 0;
+}
+.menu-wrap .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.menu-wrap .toggler:checked ~ .menu div div ul {
+  opacity: 1;
+  transform: translateY(3rem);
 }
 
 .sign-up-section {

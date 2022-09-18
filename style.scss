@@ -11,7 +11,6 @@ body{
   margin: 0;
   height: 100%;
   min-width: 100%;
-  border: 3px solid blue;
   background: linear-gradient(
       72deg,
       rgba(39, 41, 54, 1) 0%,
@@ -26,7 +25,6 @@ body{
 }
 
 header {
-  border: 1px solid green;
   width: 100%;
   padding: 0 1rem;
   display: flex;
@@ -42,7 +40,6 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
-    // border: 2px solid blue;
     list-style: none;
     li {
       h3{
@@ -62,7 +59,6 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    border: 1px solid blue;
     .toggler{
       position: absolute;
       cursor: pointer;
@@ -72,15 +68,16 @@ header {
       z-index: 2;
     }
     .hamburger{
-      // position: absolute;
-      border: 1px solid purple;
+      position: absolute;
       width: 3rem;
       height: 3rem;
       padding: .3rem;
+      margin-left: .65rem;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(43, 45, 58, 0.265);
+      z-index: 1;
       ///Hamburger line///
       div{
         position: relative;
@@ -107,14 +104,42 @@ header {
         top: 10px;
       }
     }
-
     ///Toggler Animate///
     .toggler:checked + .hamburger > div{
       transform: rotate(135deg);
     }
 
-    ///Turn lines into X///
-    
+    /*Turn lines into X*/
+    .toggler:checked + .hamburger > div:before,
+    .toggler:checked + .hamburger > div:after{
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    /*Rotate on hover when checked*/
+    .toggler:checked:hover + .hamburger > div{
+      transform: rotate(225deg);
+    }
+
+    /*Menu drop when checked*/
+    .menu{
+      // position: absolute;
+      ul{
+        transition: all 0.4s ease;
+        list-style: none;
+        background-color: rgba(43, 45, 58, 0.265);
+        padding: .8rem;
+        opacity: 0;
+        li a{
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+    .toggler:checked ~ .menu div div ul{
+      opacity: 1;
+      transform: translateY(3rem);
+    }
   }
   
 
