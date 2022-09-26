@@ -144,11 +144,11 @@ header {
   
 
 ///////////////////////////SIGN-UP/////////////////
-.sign-up-section{
+.form-wrapper{
   width: 100%;
+  max-width: 45rem;
   color: white;
   text-align: center;
-  border: 1px solid red;
   margin-top: 4rem;
   h3{
     margin-top: .5rem;
@@ -159,15 +159,13 @@ header {
   }
   .container{
     margin-top: 1.5rem;
-    border: 1px solid green;
     .sign-up-form{
-      border: 1px solid blue;
       margin: 0 1rem;
 
       input{
         width: 100%;
-        margin: .3rem 0;
-        padding: .6rem 0;
+        margin: .6rem 0;
+        padding: .9rem 0;
         border-radius: 1.2rem;
         background-color: #454953;
         color: white;
@@ -182,6 +180,46 @@ header {
 
       input[type="submit"]{
         background-color: #1D90F5;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px){
+  .menu-wrap{
+    .toggler{
+      display: none;
+    }
+    .hamburger{
+      display: none;
+      ///Hamburger line///
+      div{
+        width: initial;
+        height: initial;
+        background-color: none;
+      }
+      ///Top & Bottom lines///
+      div:before, div:after{
+        content: none;
+      }
+      ///Moves line down///
+    }
+
+    /*Menu drop when checked*/
+    .menu{
+      position: initial;
+      width: 10rem;
+      height: auto;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(43, 45, 58, 0);
+        padding: initial;
+        opacity: 1;
+        li a{
+          font-size: 1.2rem;
+          text-shadow: -.15rem .25rem 5px rgb(42, 41, 41);
+        }
       }
     }
   }

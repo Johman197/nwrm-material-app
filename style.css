@@ -124,32 +124,30 @@ header nav li span img {
   transform: translateY(3rem);
 }
 
-.sign-up-section {
+.form-wrapper {
   width: 100%;
+  max-width: 45rem;
   color: white;
   text-align: center;
-  border: 1px solid red;
   margin-top: 4rem;
 }
-.sign-up-section h3 {
+.form-wrapper h3 {
   margin-top: 0.5rem;
   font-weight: 400;
 }
-.sign-up-section h3 span {
+.form-wrapper h3 span {
   color: #1D90F5;
 }
-.sign-up-section .container {
+.form-wrapper .container {
   margin-top: 1.5rem;
-  border: 1px solid green;
 }
-.sign-up-section .container .sign-up-form {
-  border: 1px solid blue;
+.form-wrapper .container .sign-up-form {
   margin: 0 1rem;
 }
-.sign-up-section .container .sign-up-form input {
+.form-wrapper .container .sign-up-form input {
   width: 100%;
-  margin: 0.3rem 0;
-  padding: 0.6rem 0;
+  margin: 0.6rem 0;
+  padding: 0.9rem 0;
   border-radius: 1.2rem;
   background-color: #454953;
   color: white;
@@ -158,12 +156,48 @@ header nav li span img {
   border: none;
   outline-color: #1D90F5;
 }
-.sign-up-section .container .sign-up-form input:-webkit-autofill {
+.form-wrapper .container .sign-up-form input:-webkit-autofill {
   outline: none;
 }
-.sign-up-section .container .sign-up-form input:autofill {
+.form-wrapper .container .sign-up-form input:autofill {
   outline: none;
 }
-.sign-up-section .container .sign-up-form input[type=submit] {
+.form-wrapper .container .sign-up-form input[type=submit] {
   background-color: #1D90F5;
+}
+
+@media (min-width: 481px) {
+  .menu-wrap {
+    /*Menu drop when checked*/
+  }
+  .menu-wrap .toggler {
+    display: none;
+  }
+  .menu-wrap .hamburger {
+    display: none;
+  }
+  .menu-wrap .hamburger div {
+    width: initial;
+    height: initial;
+    background-color: none;
+  }
+  .menu-wrap .hamburger div:before, .menu-wrap .hamburger div:after {
+    content: none;
+  }
+  .menu-wrap .menu {
+    position: initial;
+    width: 10rem;
+    height: auto;
+  }
+  .menu-wrap .menu ul {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(43, 45, 58, 0);
+    padding: initial;
+    opacity: 1;
+  }
+  .menu-wrap .menu ul li a {
+    font-size: 1.2rem;
+    text-shadow: -0.15rem 0.25rem 5px rgb(42, 41, 41);
+  }
 }/*# sourceMappingURL=style.css.map */
