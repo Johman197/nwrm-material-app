@@ -168,6 +168,7 @@ header nav li span img {
 
 @media (min-width: 481px) {
   .menu-wrap {
+    margin-right: 1rem;
     /*Menu drop when checked*/
   }
   .menu-wrap .toggler {
@@ -199,5 +200,13 @@ header nav li span img {
   .menu-wrap .menu ul li a {
     font-size: 1.2rem;
     text-shadow: -0.15rem 0.25rem 5px rgb(42, 41, 41);
+  }
+  .form-wrapper {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 781px) {
+  .form-wrapper {
+    margin-left: 0rem;
   }
 }/*# sourceMappingURL=style.css.map */
