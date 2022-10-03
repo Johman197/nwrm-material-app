@@ -11,7 +11,6 @@ body{
   margin: 0;
   height: 100%;
   min-width: 100%;
-  border: 3px solid blue;
   background: linear-gradient(
       72deg,
       rgba(39, 41, 54, 1) 0%,
@@ -26,8 +25,8 @@ body{
 }
 
 header {
-  border: 1px solid green;
   width: 100%;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,9 +40,6 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
-    border: 2px solid blue;
-    width: 10rem;
-    margin-right: 1rem;
     list-style: none;
     li {
       h3{
@@ -57,11 +53,102 @@ header {
     }
   }
 }
-.sign-up-section{
+
+  ///////////////////////////HAMBURGER MENU/////
+  .menu-wrap{
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .toggler{
+      position: absolute;
+      cursor: pointer;
+      width: 2.8rem;
+      height: 2.8rem;
+      opacity: 0;
+      z-index: 2;
+    }
+    .hamburger{
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      padding: .3rem;
+      margin-left: .65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(43, 45, 58, 0.265);
+      z-index: 1;
+      ///Hamburger line///
+      div{
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s ease;
+      }
+      ///Top & Bottom lines///
+      div:before, div:after{
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+      }
+      ///Moves line down///
+      div:after{
+        top: 10px;
+      }
+    }
+    ///Toggler Animate///
+    .toggler:checked + .hamburger > div{
+      transform: rotate(135deg);
+    }
+
+    /*Turn lines into X*/
+    .toggler:checked + .hamburger > div:before,
+    .toggler:checked + .hamburger > div:after{
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    /*Rotate on hover when checked*/
+    .toggler:checked:hover + .hamburger > div{
+      transform: rotate(225deg);
+    }
+
+    /*Menu drop when checked*/
+    .menu{
+      // position: absolute;
+      ul{
+        transition: all 0.4s ease;
+        list-style: none;
+        background-color: rgba(43, 45, 58, 0.265);
+        padding: .8rem;
+        opacity: 0;
+        li a{
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+    .toggler:checked ~ .menu div div ul{
+      opacity: 1;
+      transform: translateY(3rem);
+    }
+  }
+  
+
+///////////////////////////SIGN-UP/////////////////
+.form-wrapper{
   width: 100%;
+  max-width: 45rem;
   color: white;
   text-align: center;
-  border: 1px solid red;
   margin-top: 4rem;
   h3{
     margin-top: .5rem;
@@ -72,15 +159,13 @@ header {
   }
   .container{
     margin-top: 1.5rem;
-    border: 1px solid green;
     .sign-up-form{
-      border: 1px solid blue;
       margin: 0 1rem;
 
       input{
         width: 100%;
-        margin: .3rem 0;
-        padding: .6rem 0;
+        margin: .6rem 0;
+        padding: .9rem 0;
         border-radius: 1.2rem;
         background-color: #454953;
         color: white;
@@ -89,11 +174,65 @@ header {
         border: none;
         outline-color: #1D90F5;
       }
+      input:autofill {
+        outline: none;
+      }
 
       input[type="submit"]{
         background-color: #1D90F5;
         padding: .6rem 0;
       }
     }
+  }
+}
+
+@media (min-width: 481px){
+  .menu-wrap{
+    margin-right: 1rem;
+    .toggler{
+      display: none;
+    }
+    .hamburger{
+      display: none;
+      ///Hamburger line///
+      div{
+        width: initial;
+        height: initial;
+        background-color: none;
+      }
+      ///Top & Bottom lines///
+      div:before, div:after{
+        content: none;
+      }
+      ///Moves line down///
+    }
+
+    /*Menu drop when checked*/
+    .menu{
+      position: initial;
+      width: 10rem;
+      height: auto;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(43, 45, 58, 0);
+        padding: initial;
+        opacity: 1;
+        li a{
+          font-size: 1.2rem;
+          text-shadow: -.15rem .25rem 5px rgb(42, 41, 41);
+        }
+      }
+    }
+  }
+
+  .form-wrapper{
+    margin-left: 2rem;
+  }
+}
+
+@media(max-width: 781px){
+  .form-wrapper{
+    margin-left: 0rem;
   }
 }
