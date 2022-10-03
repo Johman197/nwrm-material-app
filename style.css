@@ -135,7 +135,8 @@ header nav li span img {
   margin-top: 0.5rem;
   font-weight: 400;
 }
-.form-wrapper h3 span {
+.form-wrapper h3 a {
+  text-decoration: none;
   color: #1D90F5;
 }
 .form-wrapper .container {
@@ -164,6 +165,7 @@ header nav li span img {
 }
 .form-wrapper .container .sign-up-form input[type=submit] {
   background-color: #1D90F5;
+  padding: 0.85rem 0;
 }
 
 @media (min-width: 481px) {
