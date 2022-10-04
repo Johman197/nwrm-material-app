@@ -150,6 +150,9 @@ header nav li span img {
   border-radius: 1.2rem;
   margin: 1.2rem 0;
 }
+.form-wrapper .container .sign-up-form .border-accent-red {
+  border: 3px solid red;
+}
 .form-wrapper .container .sign-up-form input {
   width: 100%;
   padding: 0.9rem 0;
